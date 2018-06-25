@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+    <!--使用aop命名空间的配置方法-->
+    <!--使用aspectj定义的切面都是通过自动装配的方法来完成装配的-->
+    <aop:aspectj-autoproxy/>
+    <bean id="target" class="NaiveWaiter"/>
+    <bean class="aspectj.PreGreetingAspect"/>
+
+    <!--普通的配置方法-->
+    <!--<bean id="target" class="NaiveWaiter"/>-->
+    <!--<bean class="aspectj.PreGreetingAspect"/>-->
+    <!--<bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"/>-->
+
+</beans>
