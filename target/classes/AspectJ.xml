@@ -7,12 +7,17 @@
 
     <!--使用aop命名空间的配置方法-->
     <!--使用aspectj定义的切面都是通过自动装配的方法来完成装配的-->
+    <!--定义自动装配增强-->
     <aop:aspectj-autoproxy/>
-    <bean id="target" class="NaiveWaiter"/>
+    <!--定义增强的目标类-->
+    <bean id="target" class="basic.NaiveWaiter"/>
+    <!--定义了两个增强的实现类-->
+    <bean class="aspectj.EnalbleSellerAspect"/>
     <bean class="aspectj.PreGreetingAspect"/>
 
+
     <!--普通的配置方法-->
-    <!--<bean id="target" class="NaiveWaiter"/>-->
+    <!--<bean id="target" class="basic.NaiveWaiter"/>-->
     <!--<bean class="aspectj.PreGreetingAspect"/>-->
     <!--<bean class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator"/>-->
 
